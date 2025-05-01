@@ -1,4 +1,4 @@
-# Álvaro Uribe Vélez Chatbot
+Cookin Agent
 
 This project is a **Streamlit-based chatbot** that simulates the responses of Álvaro Uribe Vélez, former President of Colombia. Users can ask questions about his life, political career, policies, and more. The chatbot uses a generative AI model to provide detailed and context-aware answers.
 
