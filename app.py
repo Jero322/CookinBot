@@ -29,9 +29,9 @@ if "user_image" not in st.session_state:
     st.session_state.user_image = DEFAULT_USER_IMAGE
 
 # App Sidebar
-st.sidebar.title("Navigation")
+st.sidebar.title("Quick Resepie")
 st.sidebar.markdown("""
-- **About Álvaro Uribe**: Learn about his life and career **[here](https://www.alvarouribevelez.com.co/trabajo-2-1-2-14/)**.
+- **QuickRecepie**: Cook Lasagna **[here](https://www.allrecipes.com/recipe/23600/worlds-best-lasagna/)**.
 """)
 
 # Sidebar Customize Chat Section
@@ -52,10 +52,10 @@ if custom_input:
     st.session_state.messages[0]["content"] = base_prompt
 
 # Main App Layout
-st.title("Álvaro Uribe Vélez Chatbot")
+st.title("QuickRecepie")
 st.markdown("""
-This chatbot simulates the responses of Álvaro Uribe Vélez, former President of Colombia. 
-Ask questions about his life, political career, and more!
+This chatbot helps you find, create, and learn recipes step by step
+using AI—your personal chef in the kitchen!
 """)
 
 # Add custom CSS for circular images and text alignment
@@ -147,13 +147,13 @@ for message in st.session_state.messages:
                 <div class="chat-container">
                     <img src="data:image/png;base64,{base64.b64encode(open(ASSISTANT_IMAGE, 'rb').read()).decode()}" alt="Assistant Image">
                     <div class="assistant-text">
-                        <strong>Álvaro Uribe Bot:</strong> {message["content"]}
+                        <strong>QuickRecepie:</strong> {message["content"]}
                     </div>
                 </div>
             """, unsafe_allow_html=True)
 
 # User input prompt
-if prompt := st.chat_input("Ask about Álvaro Uribe Vélez's achievements, family, or policies..."):
+if prompt := st.chat_input("Craving something? Let's find a recipe!"):
     # Display user message
     with st.container():
         # Encode user image if uploaded, else use the default image
@@ -194,7 +194,7 @@ if prompt := st.chat_input("Ask about Álvaro Uribe Vélez's achievements, famil
             <div class="chat-container">
                 <img src="data:image/png;base64,{base64.b64encode(open(ASSISTANT_IMAGE, 'rb').read()).decode()}" alt="Assistant Image">
                 <div class="assistant-text">
-                    <strong>Álvaro Uribe Bot:</strong> {full_response}
+                    <strong>QuickRecepie:</strong> {full_response}
                 </div>
             </div>
         """, unsafe_allow_html=True)
